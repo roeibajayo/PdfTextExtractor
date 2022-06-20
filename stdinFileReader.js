@@ -23,6 +23,8 @@ function readFileFromStdin() {
   });
 }
 
-export async function getFileFromStdin() {
-  return Buffer.from(await readFileFromStdin(), "base64");
-}
+module.exports = {
+  getFileFromStdin: async function () {
+    return Buffer.from(await readFileFromStdin(), "base64");
+  },
+};
